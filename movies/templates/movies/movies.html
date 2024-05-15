@@ -10,20 +10,23 @@
         padding: 0;
         box-sizing: border-box;
       }
-      body{
+      body {
         display: flex;
         justify-content: center;
         align-items: center;
       }
-      body .container{
+      body .container {
         width: 90vw;
         height: 90vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         margin: 1rem;
+        overflow: scroll;
       }
       h1 {
         color: blue;
@@ -38,9 +41,12 @@
       <h1>Movies</h1>
       <ul>
         {% for movie in movies %}
-        <li>{{movie.title}}</li>
+        <li>
+          <a href={{movie.id}}>{{movie.title}}</a>
+        </li>
         {% endfor %}
-      </ul>
+      </ul><br><br><br>
+      <a href="/movies/add">Add a movie</a>
     </div>
   </body>
 </html>
